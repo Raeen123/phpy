@@ -1,5 +1,7 @@
 {
     "name": "raeen/phpy",
+    "type": "library",
+    "description" : "Use python in php",
     "license" : "MIT",
     "version" : "1.0.0",
     "authors": [
@@ -8,6 +10,7 @@
             "email": "raeen.ahniazari@gmail.com"
         }
     ],
+    "minimum-stability" : "dev",
     "require": {
        "php" : ">=7.4"
     },
