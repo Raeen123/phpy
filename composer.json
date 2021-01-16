@@ -1,0 +1,15 @@
+{
+    "name": "raeen/phpy",
+    "authors": [
+        {
+            "name": "Raeen",
+            "email": "raeen.ahniazari@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+        }
+    }
+}
