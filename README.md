@@ -5,6 +5,12 @@
 You can use python in php with its
 
 ***
+**Install**
+
+```batch
+composer require raeen/phpy
+```
+
 **Python**
 
 We use these libraries for create phpy.py:
