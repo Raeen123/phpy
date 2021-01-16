@@ -2,7 +2,7 @@
 
 ***
 
-You can use python in php with its
+You can use python in php with it
 
 ***
 **Install**
