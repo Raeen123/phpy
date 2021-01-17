@@ -1,7 +1,7 @@
 **phpy is library for php**
 
 ***
-![icon](icon.jpg)
+![icon](Icon.jpg)
 
 You can use python in php with it
 
