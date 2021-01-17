@@ -1,7 +1,6 @@
-**phpy is library for php**
-
-***
 ![icon](Icon.jpg)
+
+**phpy is library for php**
 
 You can use python in php with it
 
