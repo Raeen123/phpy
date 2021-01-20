@@ -209,7 +209,7 @@ For get output anywhere you should use this
 $Snippet->require(name)
 ```
 
-**
+***
 
 **License**
 
