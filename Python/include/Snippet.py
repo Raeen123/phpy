@@ -1,0 +1,1 @@
+print(f'hello world {10*6*9}')

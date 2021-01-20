@@ -7,7 +7,6 @@ class Python
     const python_path = 'python';
     public function gen()
     {
-        global $Run_result;
         $whattogen = func_get_args();
         $file = $whattogen[0];
         unset($whattogen[0]);
@@ -21,7 +20,6 @@ class Python
     }
     public function gen_line()
     {
-        global $Run_result;
         $whattogen = func_get_args();
         $file = $whattogen[0];
         unset($whattogen[0]);
@@ -52,10 +50,10 @@ class Python
         $output = json_decode($data);
         if ($pre_tag) {
             echo "<pre>";
-            var_dump($data);
+            var_dump($output);
             echo "</pre>";
         } else {
-            var_dump($data);
+            var_dump($output);
         }
     }
     public function path($dir, $path)

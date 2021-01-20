@@ -23,17 +23,12 @@ import numpy as np
 import cv2
 ```
 
-Import phpy.py file in Python/include/php.py 
+Import phpy.py file in Python/include/library/php.py 
 
 ***
 **Get Data from php**
 
 Get datas to python file
-```python
-import include.phpy as phpy
-
-print({'name' : phpy.get_data(1)['name'] , 'library' : phpy.get_data(1)['library'] , 'text' : phpy.get_data(2)})
-```
 For Get data you must 
 
 ```python
@@ -152,6 +147,70 @@ If you have loop in php file it's very good to add this function in top of file
 $python->ini()
 ```
 ***
+
+**Snippet**
+
+**One Line**
+
+If you want to run a python line , you should use this function
+
+```php
+$Snippet->gen($code,function(){ 
+    // controller 
+})
+```
+
+For control varable , you should it's name in ``` |&name| ```
+
+For fill varable you should ```return array``` , it must be in order
+
+```php
+$Snippet = $app->snippet;
+$Snippet->gen("print(f'hello world {|&data|*6*|&test|}')", function ($data,$test) {
+    $data = 2;
+    $test = 9;
+    $data2 = $data*5;
+    return [$data2 , $test];
+});
+
+```
+
+**Lines**
+
+**start**
+Before start writing codes you should use this
+
+```php
+$Snippet->start(name);
+```
+
+For write your codes , you should use this
+
+```php
+
+$Snippet->line(code)
+.
+.
+.
+
+```
+
+For get your output , you should use it
+
+```php
+$Snippet->end(name,save_last)
+```
+
+*name in start function must be same this name*
+
+For get output anywhere you should use this
+
+```php
+$Snippet->require(name)
+```
+
+**
+
 **License**
 
 MIT License
