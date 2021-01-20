@@ -1,9 +1,9 @@
 {
     "name": "raeen/phpy",
     "type": "library",
-    "description" : "Use python in php",
+    "description" : "Use python in php very easy",
     "license" : "MIT",
-    "version" : "1.0.0",
+    "version" : "2.0.0",
     "authors": [
         {
             "name": "Raeen",
