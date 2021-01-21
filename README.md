@@ -4,7 +4,7 @@
 
 You can use python in php with it
 
-[![Latest Stable Version](https://poser.pugx.org/raeen/phpy/v)](//packagist.org/packages/raeen/phpy) [![Total Downloads](https://poser.pugx.org/raeen/phpy/downloads)](//packagist.org/packages/raeen/phpy) [![Latest Unstable Version](https://poser.pugx.org/raeen/phpy/v/unstable)](//packagist.org/packages/raeen/phpy) [![License](https://poser.pugx.org/raeen/phpy/license)](//packagist.org/packages/raeen/phpy)[![Monthly Downloads](https://poser.pugx.org/raeen/phpy/d/monthly)](//packagist.org/packages/raeen/phpy)[![Daily Downloads](https://poser.pugx.org/raeen/phpy/d/daily)](//packagist.org/packages/raeen/phpy)
+[![Latest Stable Version](https://poser.pugx.org/raeen/phpy/v)](//packagist.org/packages/raeen/phpy) [![Total Downloads](https://poser.pugx.org/raeen/phpy/downloads)](//packagist.org/packages/raeen/phpy) [![Latest Unstable Version](https://poser.pugx.org/raeen/phpy/v/unstable)](//packagist.org/packages/raeen/phpy) [![License](https://poser.pugx.org/raeen/phpy/license)](//packagist.org/packages/raeen/phpy)[![Monthly Downloads](https://poser.pugx.org/raeen/phpy/d/monthly)](//packagist.org/packages/raeen/phpy)  [![Daily Downloads](https://poser.pugx.org/raeen/phpy/d/daily)](//packagist.org/packages/raeen/phpy)
 
 ***
 **Install**
