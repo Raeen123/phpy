@@ -7,6 +7,19 @@ You can use python in php with it
 [![Latest Stable Version](https://poser.pugx.org/raeen/phpy/v)](//packagist.org/packages/raeen/phpy) [![Total Downloads](https://poser.pugx.org/raeen/phpy/downloads)](//packagist.org/packages/raeen/phpy) [![Latest Unstable Version](https://poser.pugx.org/raeen/phpy/v/unstable)](//packagist.org/packages/raeen/phpy) [![License](https://poser.pugx.org/raeen/phpy/license)](//packagist.org/packages/raeen/phpy)[![Monthly Downloads](https://poser.pugx.org/raeen/phpy/d/monthly)](//packagist.org/packages/raeen/phpy)  [![Daily Downloads](https://poser.pugx.org/raeen/phpy/d/daily)](//packagist.org/packages/raeen/phpy)
 
 ***
+## Features
+- Show all output from python file
+- Show last line output from python file
+- Send data to python file
+- Get data from python file
+- show image in php from python
+- path Genrate
+- write python line code
+- mange python line code
+- write python part
+- require python part
+***
+
 **Install**
 ```batch
 git clone https://github.com/Raeen123/phpy
