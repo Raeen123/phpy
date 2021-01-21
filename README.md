@@ -212,7 +212,7 @@ For get output anywhere you should use this
 $Snippet->require(name)
 ```
 
-**Example , index.php : **
+**Example , index.php :**
 
 ```php
 $Snippet->start("test");
