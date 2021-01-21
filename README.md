@@ -9,7 +9,7 @@ You can use python in php with it
 ***
 ## Features
 - Show all output from python file
-- Show last line output from python file
+- Show last line output from python
 - Send data to python file
 - Get data from python file
 - show image in php from python
