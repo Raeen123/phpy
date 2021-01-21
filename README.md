@@ -219,7 +219,9 @@ $Snippet->start("test");
 $Snippet->line("a = 'Hello world'");
 $Snippet->line("print(a)");
 echo $Snippet->end("test");
+```
 
+```output
 Output : Hello world 
 ```
 
@@ -229,6 +231,10 @@ Output : Hello world
 
 $Snippet->require("test");
 
+```
+
+```output
+Output : Hello world 
 ```
 ***
 
