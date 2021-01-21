@@ -126,8 +126,7 @@ Example
 $python->img($output,$type,true,
 [
     'border' => '1px solid red'
-]
-)
+])
 ```
 ***
 **Path**
@@ -213,6 +212,24 @@ For get output anywhere you should use this
 $Snippet->require(name)
 ```
 
+**Example , index.php : **
+
+```php
+$Snippet->start("test");
+$Snippet->line("a = 'Hello world'");
+$Snippet->line("print(a)");
+echo $Snippet->end("test");
+
+Output : Hello world 
+```
+
+**You can use this code in another file**
+
+```php
+
+$Snippet->require("test");
+
+```
 ***
 
 **License**
