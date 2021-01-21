@@ -49,7 +49,7 @@ Get datas to python file
 For Get data you must 
 
 ```python
-get_data( Number Of Send data )
+phpy.get_data( Number Of Send data )
 ```
 
 
