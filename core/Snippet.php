@@ -38,9 +38,7 @@ class Snippet
         } else {
             $code_result = $code;
         }
-        $file = $this->path('Snippet');
-        file_put_contents($file, $code_result);
-        return shell_exec('python ' . $file . ' 2>&1');
+        return shell_exec('python -c "'.$code_result.'"');
     }
     public function end(string $name, bool $save_last = false)
     {
