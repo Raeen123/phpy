@@ -4,12 +4,31 @@
 
 You can use python in php with it
 
-***
-**Install**
+[![Latest Stable Version](https://poser.pugx.org/raeen/phpy/v)](//packagist.org/packages/raeen/phpy) [![Total Downloads](https://poser.pugx.org/raeen/phpy/downloads)](//packagist.org/packages/raeen/phpy) [![Latest Unstable Version](https://poser.pugx.org/raeen/phpy/v/unstable)](//packagist.org/packages/raeen/phpy) [![License](https://poser.pugx.org/raeen/phpy/license)](//packagist.org/packages/raeen/phpy)[![Monthly Downloads](https://poser.pugx.org/raeen/phpy/d/monthly)](//packagist.org/packages/raeen/phpy)  [![Daily Downloads](https://poser.pugx.org/raeen/phpy/d/daily)](//packagist.org/packages/raeen/phpy)
 
+***
+## Features
+- Show all output from python file
+- Show last line output from python
+- Send data to python file
+- Get data from python file
+- show image in php from python
+- path Genrate
+- write python line code
+- mange python line code
+- write python part
+- require python part
+***
+
+**Install**
+```batch
+git clone https://github.com/Raeen123/phpy
+```
 ```batch
 composer require raeen/phpy
 ```
+
+***
 
 **Python**
 
@@ -32,7 +51,7 @@ Get datas to python file
 For Get data you must 
 
 ```python
-get_data( Number Of Send data )
+phpy.get_data( Number Of Send data )
 ```
 
 
@@ -122,8 +141,7 @@ Example
 $python->img($output,$type,true,
 [
     'border' => '1px solid red'
-]
-)
+])
 ```
 ***
 **Path**
@@ -209,6 +227,30 @@ For get output anywhere you should use this
 $Snippet->require(name)
 ```
 
+**Example , index.php :**
+
+```php
+$Snippet->start("test");
+$Snippet->line("a = 'Hello world'");
+$Snippet->line("print(a)");
+echo $Snippet->end("test");
+```
+
+```output
+Output : Hello world 
+```
+
+**You can use this code in another file**
+
+```php
+
+$Snippet->require("test");
+
+```
+
+```output
+Output : Hello world 
+```
 ***
 
 **License**

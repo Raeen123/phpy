@@ -3,7 +3,6 @@
     "type": "library",
     "description" : "Use python in php very easy",
     "license" : "MIT",
-    "version" : "2.0.1",
     "authors": [
         {
             "name": "Raeen",
