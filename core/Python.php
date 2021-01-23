@@ -63,17 +63,6 @@ class Python
         }
         return "data:image/" . $type . ";base64," . $res;
     }
-    public function dump($data, bool $pre_tag = true)
-    {
-        $output = json_decode($data);
-        if ($pre_tag) {
-            echo "<pre>";
-            var_dump($output);
-            echo "</pre>";
-        } else {
-            var_dump($output);
-        }
-    }
     public function path($dir, $path)
     {
         $local_path = explode('/', $path);

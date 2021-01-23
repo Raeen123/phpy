@@ -12,4 +12,4 @@ $data1 = [
 ];
 $data2 = "test";
 $output = $python->gen("../Python/test2.py", $data1, $data2);
-$python->dump($output);
+var_dump($output);

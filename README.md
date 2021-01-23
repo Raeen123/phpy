@@ -39,6 +39,9 @@ python = 3.9.1
 numpy = 1.19.3
 python-opencv =  4.4.0.46
 ```
+
+***
+
 **Python**
 
 We use these libraries for create phpy.py:
@@ -115,18 +118,10 @@ $data1 = [
 $data2 = "test";
 $output = $python->gen("../Python/test2.py", $data1, $data2);
 ```
-***
-**Show result**
-
-```php
-$output = $python->gen(path,datas...)
-```
-
-In $output you have python result also you can ```gen_line()``` function for return last line of result
-
 Also you can use ```gen_live_show()``` for print live output
 
 Example:
+
 
 ```php
 $site = "google.com";
@@ -139,16 +134,16 @@ $python->gen_live_show(
         return "<pre>$res</pre>";
     }
 );
-
 ```
-If result is json , you should use this
+***
+**Show result**
 
 ```php
-$python->dump($json_data,$pre_tag)
+$output = $python->gen(path,datas...)
 ```
-This function for json decoding 
 
-If $pre_tag is true , show result in pre tag
+In $output you have python result also you can ```gen_line()``` function for return last line of result
+
 ***
 **Show Img**
 
