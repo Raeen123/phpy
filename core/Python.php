@@ -18,6 +18,24 @@ class Python
         $cmd_result = shell_exec($command);
         return $cmd_result;
     }
+    public function gen_live_show($path, $time, $read, array $args, object $fun)
+    {
+        $resultargs = null;
+        foreach ($args as $send) {
+            $resultargs .= escapeshellarg(json_encode($send)) . " ";
+        }
+        $command = self::python_path . " " . $path . " " . $resultargs . " 2>&1";
+        $pid = popen($command, "r");
+        while (!feof($pid)) {
+            $res = fread($pid, $read);
+            $return = call_user_func($fun, $res);
+            echo $return;
+            flush();
+            ob_flush();
+            sleep($time);
+        }
+        pclose($pid);
+    }
     public function gen_line()
     {
         $whattogen = func_get_args();

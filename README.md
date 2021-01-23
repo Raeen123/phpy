@@ -113,8 +113,25 @@ $output = $python->gen("../Python/test2.py", $data1, $data2);
 $output = $python->gen(path,datas...)
 ```
 
-In $output you have python result also you can gen_line() function for return last line of result
+In $output you have python result also you can ```gen_line()``` function for return last line of result
 
+Also you can use ```gen_live_show()``` for print live output
+
+Example:
+
+```php
+$site = "google.com";
+$python->gen_live_show(
+    "../Python/test6.py", //file path
+    1, // time sleep between each output
+    1024, // bytes from the file pointer referenced by stream
+    [$site], // your data
+    function ($res) { //controller
+        return "<pre>$res</pre>";
+    }
+);
+
+```
 If result is json , you should use this
 
 ```php
