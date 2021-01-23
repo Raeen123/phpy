@@ -1,0 +1,1 @@
+import subprocess as sub  sub.call('ping google.com')  

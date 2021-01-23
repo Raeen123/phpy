@@ -1,4 +1,4 @@
-![icon](Icon.jpg)
+![icon](favicon.ico)
 
 **phpy is library for php**
 
@@ -43,6 +43,8 @@ python-opencv =  4.4.0.46
 ***
 
 **Python**
+
+You must if you don't add  python in your path environment , add yor python path in ``` core/Python.php ``` in ``` const python_path  ```
 
 We use these libraries for create phpy.py:
 
@@ -118,7 +120,7 @@ $data1 = [
 $data2 = "test";
 $output = $python->gen("../Python/test2.py", $data1, $data2);
 ```
-Also you can use ```gen_live_show()``` for print live output
+Also you can use ```gen_live()``` for print live output
 
 Example:
 
@@ -215,6 +217,16 @@ $Snippet->gen("print(f'hello world {|&data|*7*|&test|}'); print('--Hello')", fun
 
 ```
 
+If you want show live output use this function ``` gen_live() ```
+
+```php
+$Snippet->gen_live(
+    code, //line code
+    time, //time between each read data
+    code_controller, //code controller
+    result_controller // result control
+)
+```
 **Lines**
 
 **start**
@@ -247,6 +259,17 @@ For get output anywhere you should use this
 
 ```php
 $Snippet->require(name)
+```
+
+For get live output anywhere you should use this
+
+```php
+$Snippet->require_live(
+    name, //code name
+    time, // time between each read data
+    read, // bytes from the file pointer referenced by stream
+    function($res){return $res;} , //controller
+)
 ```
 
 **Example , index.php :**

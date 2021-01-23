@@ -18,7 +18,7 @@ class Python
         $cmd_result = shell_exec($command);
         return $cmd_result;
     }
-    public function gen_live_show($path, $time, $read, array $args, object $fun)
+    public function gen_live($path, $time, $read, array $args, object $fun)
     {
         $resultargs = null;
         foreach ($args as $send) {

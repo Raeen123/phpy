@@ -7,7 +7,7 @@ $app = new App();
 $python = $app->python;
 
 $site = "google.com";
-$python->gen_live_show(
+$python->gen_live(
     "../Python/test6.py",
     1,
     1024,
