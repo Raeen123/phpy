@@ -37,7 +37,6 @@ php = 8.0.1 (Your php version must be at least 7.4 )
 python = 3.9.1
 numpy = 1.19.3
 python-opencv =  4.4.0.46
-
 ```
 **Python**
 
