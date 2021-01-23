@@ -182,6 +182,7 @@ For control varable , you should it's name in ``` |&name| ```
 
 For fill varable you should ```return array``` , it must be in order
 
+You must use ```"``` in python code and use ```;``` in the end of each line
 ```php
 $Snippet = $app->snippet;
 $Snippet->gen("print(f'hello world {|&data|*7*|&test|}'); print('--Hello')", function ($data,$test) {
