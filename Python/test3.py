@@ -1,6 +1,4 @@
 import include.library.phpy as phpy
-import base64
-
 import numpy as np
 import cv2
 
