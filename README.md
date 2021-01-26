@@ -193,7 +193,8 @@ For fill varable you should ```return array``` , it must be in order
 You must use ```"``` in python code and use ```;``` in the end of each line
 ```php
 $Snippet = $app->snippet;
-$Snippet->set("print(f'hello world {|&data|*7*|&test|}'); print('--Hello')", function ($data,$test) {
+$Snippet->set("print(f'hello world {|&data|*7*|&test|}'); print('--Hello')",
+function ($data,$test) {
     $data = 2;
     $test = 9;
     $data2 = $data*5;
