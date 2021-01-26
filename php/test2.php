@@ -11,5 +11,5 @@ $data1 = [
     'library' => 'phpy'
 ];
 $data2 = "test";
-$output = $python->gen("../Python/test2.py", $data1, $data2);
+$output = $python->set("../Python/test2.py")->send($data1,$data2)->gen();
 var_dump($output);

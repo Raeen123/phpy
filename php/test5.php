@@ -14,4 +14,4 @@ $Snippet->line('print("hello Raeen")');
 
 $Snippet->end('snippet-test5');
 
-echo $Snippet->require('snippet-test5');
+echo $Snippet->select('snippet-test5')->gen();

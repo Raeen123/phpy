@@ -118,40 +118,29 @@ $data1 = [
     'library' => 'phpy'
 ];
 $data2 = "test";
-$output = $python->gen("../Python/test2.py", $data1, $data2);
+$output = $python->set("../Python/test2.py")->send($data1, $data2)->gen();
 ```
-Also you can use ```gen_live()``` for print live output
-
-Example:
+live output example:
 
 
 ```php
 $site = "google.com";
-$python->gen_live_show(
-    "../Python/test6.py", //file path
-    1, // time sleep between each output
-    1024, // bytes from the file pointer referenced by stream
-    [$site], // your data
-    function ($res) { //controller
-        return "<pre>$res</pre>";
-    }
-);
+$python->set('../Python/test6.py')->send($data)->live()->gen();
 ```
 ***
 **Show result**
 
 ```php
-$output = $python->gen(path,datas...)
+$output = $python->set(path)->send(datas..)->gen()
 ```
 
-In $output you have python result also you can ```gen_line()``` function for return last line of result
 
 ***
 **Show Img**
 
 You can use this function to genrate what's return from phpy.push_img()
 ```php
-$python->img($output,$type,$show,$style)
+$app->img($output,$type,$show,$style)
 ```
 **$type must be same type in php.push_img()**
 
@@ -161,7 +150,7 @@ Also you can set style for this
 
 Example
 ```php
-$python->img($output,$type,true,
+$app->img($output,$type,true,
 [
     'border' => '1px solid red'
 ])
@@ -169,23 +158,19 @@ $python->img($output,$type,true,
 ***
 **Path**
 
-For example , I have image file in this diractory but python file in Python/**.py and I want to send path to it . for this in must to send this path ../my-img Or use this functiuon for send path file
+For example , I have image file in this diractory but python file in Python/**.py and I want to send path to it . for this in must to send this path ../my-img Or use this functiuon for send path file or directory
 
 ```php
-$python->path_file(__Dir__,path form this file)
+$app->path(__Dir__,path)
 ```
 
-Or send path diractory 
-```php
-$python->path(__Dir__,path form this file)
-```
 ***
 **Ini**
 
 If you have loop in php file it's very good to add this function in top of file
 
 ```php
-$python->ini()
+$app->ini()
 ```
 ***
 
@@ -196,9 +181,9 @@ $python->ini()
 If you want to run a python line , you should use this function
 
 ```php
-$Snippet->gen($code,function(){ 
+$Snippet->set($code,function(){ 
     // controller 
-})
+})->gen();
 ```
 
 For control varable , you should it's name in ``` |&name| ```
@@ -208,24 +193,13 @@ For fill varable you should ```return array``` , it must be in order
 You must use ```"``` in python code and use ```;``` in the end of each line
 ```php
 $Snippet = $app->snippet;
-$Snippet->gen("print(f'hello world {|&data|*7*|&test|}'); print('--Hello')", function ($data,$test) {
+$Snippet->set("print(f'hello world {|&data|*7*|&test|}'); print('--Hello')", function ($data,$test) {
     $data = 2;
     $test = 9;
     $data2 = $data*5;
     return [$data2 , $test];
-});
+})->gen();
 
-```
-
-If you want show live output use this function ``` gen_live() ```
-
-```php
-$Snippet->gen_live(
-    code, //line code
-    time, //time between each read data
-    code_controller, //code controller
-    result_controller // result control
-)
 ```
 **Lines**
 
@@ -247,7 +221,7 @@ $Snippet->line(code)
 
 ```
 
-For get your output , you should use it
+For end of lines
 
 ```php
 $Snippet->end(name,save_last)
@@ -258,19 +232,9 @@ $Snippet->end(name,save_last)
 For get output anywhere you should use this
 
 ```php
-$Snippet->require(name)
+$Snippet->select(name)->gen()
 ```
 
-For get live output anywhere you should use this
-
-```php
-$Snippet->require_live(
-    name, //code name
-    time, // time between each read data
-    read, // bytes from the file pointer referenced by stream
-    function($res){return $res;} , //controller
-)
-```
 
 **Example , index.php :**
 
@@ -278,7 +242,8 @@ $Snippet->require_live(
 $Snippet->start("test");
 $Snippet->line("a = 'Hello world'");
 $Snippet->line("print(a)");
-echo $Snippet->end("test");
+$Snippet->end("test");
+$Snippet->select("test")->gen();
 ```
 
 ```output
@@ -289,7 +254,7 @@ Output : Hello world
 
 ```php
 
-$Snippet->require("test");
+$Snippet->select("test")->gen();
 
 ```
 
@@ -298,6 +263,35 @@ Output : Hello world
 ```
 ***
 
+**Live Output**
+Any where (Snippet and Python class) you can use this so easy
+
+just before use ```gen()``` use ```live()``` then use ```gen(/* you can write function here to control output */)
+```php
+$python->set("../Python/test6.py")->send($site)->live()->gen(
+    function ($res) {
+        return "<pre>$res</pre>";
+    }
+);
+```
+you can also set time without each reading ouput (defult is 1)
+```php
+$python->set("../Python/test6.py")->send($site)->live()->ini(3)->gen(
+    function ($res) {
+        return "<pre>$res</pre>";
+    }
+);
+```
+```php
+$Snippet->set(
+    "import subprocess as sub; sub.call('ping |&site|') ",function($site){ $site = "google.com"; return [$site];}
+)->live()->ini(3)->gen();
+
+```
+
+```php
+$Snippet->select('snippet-test8')->live()->gen(function($res){ return "<b><pre>$res</pre></b>";});
+```
 **License**
 
 MIT License

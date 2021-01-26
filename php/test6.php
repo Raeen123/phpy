@@ -7,11 +7,14 @@ $app = new App();
 $python = $app->python;
 
 $site = "google.com";
-$python->gen_live(
-    "../Python/test6.py",
-    1,
-    1024,
-    [$site],
+// all , defult time is 1
+$python->set("../Python/test6.py")->send($site)->live()->gen(function ($res) {
+    return "<pre>$res</pre>";
+});
+
+echo "<br>------------------------------------------<br>";
+//ini
+$python->set("../Python/test6.py")->send($site)->live()->ini(3)->gen(
     function ($res) {
         return "<pre>$res</pre>";
     }

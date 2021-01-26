@@ -24,4 +24,4 @@ def push_img(img, type):
     _, im_arr = cv2.imencode(type_res, img)
     im_bytes = im_arr.tobytes()
     im_b64 = base64.b64encode(im_bytes)
-    print(im_b64)
+    return(im_b64)
