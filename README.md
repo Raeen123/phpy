@@ -320,6 +320,6 @@ SOFTWARE.
 
 **Example**
 
-There are examples in php and python diractory
+There are examples in [phpy-examples](https://github.com/Raeen123/phpy-examples)
 ***
 **BY RAEEN AHANI AZARI**
