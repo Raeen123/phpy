@@ -5,7 +5,7 @@ namespace app\core;
 
 class live
 {
-    public $time = 1;
+    public int|float $time = 1;
     private $commad = "";
     public function __construct(string $commad = null)
     {
